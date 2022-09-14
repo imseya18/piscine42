@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmorue <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:44:52 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/09 11:23:29 by mmorue           ###   ########.fr       */
+/*   Created: 2022/09/10 16:54:52 by mmorue            #+#    #+#             */
+/*   Updated: 2022/09/10 17:24:26 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
+	while (str[i] != '\0')
 		i++;
-	}
-	dest[i] = src[i];
-	return (dest);
+	return (i);
 }

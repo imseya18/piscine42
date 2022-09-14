@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorue <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mmorue <mmorue@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:44:52 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/09 11:23:29 by mmorue           ###   ########.fr       */
+/*   Created: 2022/09/12 17:02:35 by mmorue            #+#    #+#             */
+/*   Updated: 2022/09/13 14:27:24 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
+//#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_fibonacci(int index)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = src[i];
-	return (dest);
+	if (index < 0)
+		return (-1);
+	if (index == 0)
+		return (0);
+	if (index == 1)
+		return (1);
+	return (ft_fibonacci(index - 1) + ft_fibonacci (index - 2));
 }
+/*int main (void)
+{
+	printf("%d", ft_fibonacci(12));
+}*/

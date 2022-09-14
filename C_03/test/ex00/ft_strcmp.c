@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmorue <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:44:52 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/09 11:23:29 by mmorue           ###   ########.fr       */
+/*   Created: 2022/09/08 18:01:31 by mmorue            #+#    #+#             */
+/*   Updated: 2022/09/08 18:58:58 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		if (s1[i] == s2[i])
+		{
+			i++;
+		}
+		else if (s1[i] > s2[i])
+		{
+			return (1);
+		}
+		else if (s1[i] < s2[i])
+		{
+			return (-1);
+		}
 	}
-	dest[i] = src[i];
-	return (dest);
+	return (0);
 }

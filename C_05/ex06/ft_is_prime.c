@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorue <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mmorue <mmorue@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:44:52 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/09 11:23:29 by mmorue           ###   ########.fr       */
+/*   Created: 2022/09/13 11:23:18 by mmorue            #+#    #+#             */
+/*   Updated: 2022/09/13 14:27:30 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+//#include <stdio.h>
+
+int	ft_is_prime(int nb)
 {
 	int	i;
 
-	i = 0;
-	while (src[i] != '\0')
+	if (nb < 2)
+		return (0);
+	i = 2;
+	while (i < nb)
 	{
-		dest[i] = src[i];
+		if (nb % i == 0)
+			return (0);
 		i++;
 	}
-	dest[i] = src[i];
-	return (dest);
+	return (1);
 }
+
+/*int	main(void)
+{
+	printf("%d",ft_is_prime(-18));
+}*/

@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorue <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mmorue <mmorue@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:44:52 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/09 11:23:29 by mmorue           ###   ########.fr       */
+/*   Created: 2022/09/12 13:31:41 by mmorue            #+#    #+#             */
+/*   Updated: 2022/09/12 16:56:29 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+//#include <stdio.h>
+
+int	ft_iterative_power(int nb, int power)
 {
 	int	i;
 
-	i = 0;
-	while (src[i] != '\0')
+	i = nb;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	while (power > 1)
 	{
-		dest[i] = src[i];
-		i++;
+		nb = nb * i;
+		power--;
 	}
-	dest[i] = src[i];
-	return (dest);
+	return (nb);
 }
+/*int	main(void)
+{
+	printf("%d", ft_iterative_power(4,2));
+}*/

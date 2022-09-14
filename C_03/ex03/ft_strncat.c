@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmorue <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:44:52 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/09 11:23:29 by mmorue           ###   ########.fr       */
+/*   Created: 2022/09/09 11:13:04 by mmorue            #+#    #+#             */
+/*   Updated: 2022/09/09 11:42:52 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
+	int				i;
+	unsigned int	k;
 
 	i = 0;
-	while (src[i] != '\0')
+	k = 0;
+	while (dest[i] != '\0')
 	{
-		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = src[i];
+	while (src[k] != '\0' && k < nb)
+	{
+		dest[i] = src[k];
+		i++;
+		k++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }

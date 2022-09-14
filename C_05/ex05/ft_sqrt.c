@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorue <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mmorue <mmorue@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:44:52 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/09 11:23:29 by mmorue           ###   ########.fr       */
+/*   Created: 2022/09/13 10:22:45 by mmorue            #+#    #+#             */
+/*   Updated: 2022/09/13 16:55:57 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+//#include <stdio.h>
+
+int	ft_sqrt(int nb)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
+	while ((i * i) < nb && i < 46340)
 		i++;
-	}
-	dest[i] = src[i];
-	return (dest);
+	if ((i * i) == nb)
+		return (i);
+	return (0);
 }
+/*int	main(void)
+{
+	printf("%d",ft_sqrt(329476));
+}*/

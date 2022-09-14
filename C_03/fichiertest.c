@@ -6,7 +6,7 @@
 /*   By: mmorue <mmorue@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 15:04:42 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/08 18:09:31 by mmorue           ###   ########.fr       */
+/*   Updated: 2022/09/10 11:53:54 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,73 @@ int ft_strcmp(char *s1, char *s2)
 	return(s1[i] - s2[i]);
 
 }
+
+char *ft_strcat(char *dest, char *src)
+{
+	int i;
+	int k;
+	
+	i = 0;
+	k = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (src[k] != '\0')
+	{
+		dest[i] = src[k];
+		i++;
+		k++;
+	}
+	dest[i] = '\0';
+	i = 0;
+	while (dest[i] != '\0')
+	{
+		write(1, &dest[i], 1);
+		i++;
+	}	
+	return(dest);
+}
+
+char *ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	int i;
+	unsigned int k;
+	
+	i = 0;
+	k = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (src[k] != '\0' && k < nb)
+	{
+		dest[i] = src[k];
+		i++;
+		k++;
+	}
+	dest[i] = '\0';
+	i = 0;
+	while (dest[i] != '\0')
+	{
+		write(1, &dest[i], 1);
+		i++;
+	}	
+	return (dest);
+	
+
+
+
+
+
+}
+
+
 int	main(void)
 {
-	char s1[] = "salut";
-	char s2[] = "salut";
-	ft_strcmp(s1, s2);
+	char dest[] = "salut";
+	char src[] = "bonjour";
+	ft_strncat(dest, src, 5);
 
-	printf("%d", ft_strcmp(s1, s2));
+//	printf("%s", ft_strcat(dest, src));
 }

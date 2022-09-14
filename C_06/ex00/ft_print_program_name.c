@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorue <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mmorue <mmorue@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:44:52 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/09 11:23:29 by mmorue           ###   ########.fr       */
+/*   Created: 2022/09/14 09:42:48 by mmorue            #+#    #+#             */
+/*   Updated: 2022/09/14 10:35:46 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+void	ft_putchar(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		write (1, &str[i], 1);
 		i++;
 	}
-	dest[i] = src[i];
-	return (dest);
+	write (1, "\n", 1);
+}
+
+int	main(int argc, char **argv)
+{	
+	int	i;
+
+	i = 1;
+	while (i <= argc)
+		ft_putchar(argv[i]);
+	return (0);
 }

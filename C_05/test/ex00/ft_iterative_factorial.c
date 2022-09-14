@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorue <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mmorue <mmorue@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:44:52 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/09 11:23:29 by mmorue           ###   ########.fr       */
+/*   Created: 2022/09/12 11:06:39 by mmorue            #+#    #+#             */
+/*   Updated: 2022/09/13 14:27:27 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//#include <stdio.h>
 #include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_iterative_factorial(int nb)
 {
-	int	i;
+	int	temp;
 
-	i = 0;
-	while (src[i] != '\0')
+	temp = nb;
+	if (nb < 0)
+		return (0);
+	if (nb == 0)
+		return (1);
+	while (nb > 1)
 	{
-		dest[i] = src[i];
-		i++;
+		temp = temp * (nb - 1);
+		nb--;
 	}
-	dest[i] = src[i];
-	return (dest);
-}
+	return (temp);
+}	
+/*int main(void)
+{
+	printf("%d",ft_iterative_factorial(0));
+}*/

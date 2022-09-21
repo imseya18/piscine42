@@ -1,21 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorue <mmorue@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mmorue <mmorue@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 13:53:18 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/20 15:58:27 by mmorue           ###   ########.fr       */
+/*   Created: 2022/08/31 18:31:16 by mmorue            #+#    #+#             */
+/*   Updated: 2022/08/31 20:14:25 by mmorue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
-
-typedef struct ft_point
+void	ft_putchar(char c)
 {
-	int	x;
-	int	y;
-}	t_point;
-#endif
+	write(1, &c, 1);
+}

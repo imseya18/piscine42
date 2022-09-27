@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmorue <mmorue@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seya <seya@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:41:19 by mmorue            #+#    #+#             */
-/*   Updated: 2022/09/17 11:41:44 by mmorue           ###   ########.fr       */
+/*   Updated: 2022/09/27 14:08:41 by seya             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	*ft_range(int min, int max)
 		return (tab);
 	}
 }
-//int main(void)
+int main(void)
 //{	int *tab;
 //	int i;
 //
